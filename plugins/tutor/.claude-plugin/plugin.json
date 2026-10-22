@@ -1,6 +1,6 @@
 {
   "name": "tutor",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A tutor that follows any roadmap as its curriculum: plans your sessions, teaches, reviews your practice, quizzes you, and adapts when the roadmap changes.",
   "author": {
     "name": "Vadym Novakovskyi",

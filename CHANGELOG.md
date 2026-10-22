@@ -14,6 +14,10 @@ To see which version you have installed, run `claude plugin list`.
 
 ## [Unreleased]
 
+## [1.0.0] - 2026-10-22
+
+First release.
+
 ### Added
 
 - `tutor` plugin:
@@ -36,3 +40,6 @@ To see which version you have installed, run `claude plugin list`.
     reviews due, weak spots.
   - The tutor talks in the language the learner writes in; the workbook is
     always kept in English.
+
+[Unreleased]: https://github.com/vnovakovskyi/claude-learn-skills/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/vnovakovskyi/claude-learn-skills/releases/tag/v1.0.0
