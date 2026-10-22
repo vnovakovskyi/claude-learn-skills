@@ -1,0 +1,13 @@
+{
+  "name": "tutor",
+  "version": "0.1.0",
+  "description": "A tutor that follows any roadmap as its curriculum: plans your sessions, teaches, reviews your practice, quizzes you, and adapts when the roadmap changes.",
+  "author": {
+    "name": "Vadym Novakovskyi",
+    "url": "https://github.com/vnovakovskyi"
+  },
+  "homepage": "https://github.com/vnovakovskyi/claude-learn-skills",
+  "repository": "https://github.com/vnovakovskyi/claude-learn-skills",
+  "license": "MIT",
+  "keywords": ["learning", "tutor", "roadmap", "curriculum", "quiz", "spaced-repetition"]
+}

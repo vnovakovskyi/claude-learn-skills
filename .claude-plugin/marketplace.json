@@ -1,0 +1,16 @@
+{
+  "name": "novakovskyi-learn-skills",
+  "owner": {
+    "name": "Vadym Novakovskyi",
+    "url": "https://github.com/vnovakovskyi"
+  },
+  "description": "Claude Code skills for learning: a tutor that takes you through a roadmap, quizzes you, and keeps your progress in a workbook of your own.",
+  "plugins": [
+    {
+      "name": "tutor",
+      "source": "./plugins/tutor",
+      "description": "A tutor that follows any roadmap as its curriculum: plans your sessions, teaches, reviews your practice, quizzes you, and adapts when the roadmap changes.",
+      "category": "learning"
+    }
+  ]
+}
