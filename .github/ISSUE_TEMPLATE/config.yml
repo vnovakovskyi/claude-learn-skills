@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: A mistake in a roadmap
+    url: https://github.com/vnovakovskyi/java-roadmap/issues
+    about: Wrong facts, dead links or unclear tasks in a roadmap belong to that roadmap's own repository. This link is for java-roadmap; for another roadmap, see its README.
