@@ -24,7 +24,7 @@ Read these files that ship with the plugin:
 
 - `${CLAUDE_SKILL_DIR}/../../references/workbook.md` (required)
 - `${CLAUDE_SKILL_DIR}/../../references/teaching.md` (required: "Reviews",
-  "Open questions", "Asking with choices")
+  "Open questions", "Asking with choices", "Ending a step")
 - `${CLAUDE_SKILL_DIR}/../../references/sync.md` — if `/tutor:open` hasn't
   run in this conversation
 
@@ -81,6 +81,7 @@ Review — <score>/<total>
 Recapped:   <what was missed, in a few words>
 Still weak: <weak spots that remain>
 Next due:   <date: topics> | nothing scheduled yet
+Next:       </tutor:teach <concept> — revisit what was missed | /tutor:open — back to <the current topic>>
 ```
 
 ## Definition of done

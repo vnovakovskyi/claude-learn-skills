@@ -14,6 +14,19 @@ To see which version you have installed, run `claude plugin list`.
 
 ## [Unreleased]
 
+### Changed
+
+- `teach` no longer asks what to learn or how. It takes the current topic,
+  explains it right away, and lists what to read or watch to understand it
+  better: the roadmap's own sources first, then one or two checked articles or
+  videos from the web. When the learner is back, it checks each concept with a
+  question and leads on to the practice.
+- Every step ends with the command for the next one (`Next: /tutor:…`), in
+  `enroll`, `open`, `teach`, `practice` (also after giving the task), `quiz`,
+  `review` and `progress`.
+- The list of materials holds only links the tutor opened and checked, and the
+  tutor no longer describes its search.
+
 ## [1.0.0] - 2026-10-22
 
 First release.

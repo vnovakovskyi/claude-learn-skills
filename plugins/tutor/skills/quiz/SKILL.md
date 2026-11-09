@@ -24,7 +24,7 @@ Read these files that ship with the plugin:
 
 - `${CLAUDE_SKILL_DIR}/../../references/workbook.md` (required)
 - `${CLAUDE_SKILL_DIR}/../../references/teaching.md` (required: "Asking with
-  choices", "Quizzes", "Definition of done")
+  choices", "Quizzes", "Definition of done", "Ending a step")
 - `${CLAUDE_SKILL_DIR}/../../references/sync.md` — if `/tutor:open` hasn't
   run in this conversation
 
@@ -90,7 +90,7 @@ Quiz: <subject> · <choice | open> — <score>/<total> (<percent>%) — <passed 
 
 Strong:      <what went well>
 To revisit:  <weak spots, each with its concept and topic>
-Next:        <the open round | /tutor:teach <concept> | topic done → /tutor:open>
+Next:        </tutor:quiz open — the open round | /tutor:teach <concept> — revisit it | topic done: /tutor:open — the next topic>
 ```
 
 ## Definition of done

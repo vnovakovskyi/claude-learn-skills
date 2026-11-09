@@ -26,7 +26,7 @@ Read these files that ship with the plugin:
 - `${CLAUDE_SKILL_DIR}/../../references/workbook.md` (required)
 - `${CLAUDE_SKILL_DIR}/../../references/sync.md` (required)
 - `${CLAUDE_SKILL_DIR}/../../references/teaching.md` — "The path through a
-  topic"
+  topic" and "Ending a step"
 
 ## Hard rules
 
@@ -57,9 +57,10 @@ Read these files that ship with the plugin:
    (`Next review` today or earlier) and gaps, if there are any. If the
    journal's last entry is two weeks old or more, suggest
    `/tutor:review recent` before new material.
-6. **Offer the next step**: for a topic, `/tutor:teach` (or a specific
-   concept), `/tutor:practice` or `/tutor:quiz`, depending on its stage; for a
-   module, opening one of its topics.
+6. **End with the next command** (teaching.md, "Ending a step"): for a topic,
+   the one for its stage — `/tutor:teach` for a new topic or one in `learn` or
+   `concepts`, then `/tutor:practice`, then `/tutor:quiz`; for a module,
+   opening the topic to continue with.
 
 ## Output
 
@@ -84,14 +85,14 @@ Practice: <the task in one line>
 Done when: <the definition of done, shortened>
 
 Plan:
-  1. Learn the concepts — I explain, or you read or watch first   /tutor:teach
+  1. Learn — a short explanation and what to read, then a check /tutor:teach
   2. Practice — <the task, very short>                          /tutor:practice
   3. Quiz — options first, then open questions                  /tutor:quiz
 
 <Reviews due: <topics> — /tutor:review>
 <Gaps: <topics> — added to the course behind you>
 
-Say "teach me" to start, or name a concept to begin with.
+Next: </tutor:teach | /tutor:practice | /tutor:quiz, by the stage> — <what it does>
 ```
 
 For a module:
@@ -108,7 +109,7 @@ Topics:
     <topic> — new, behind you
 
 After the last topic: a module checkpoint — /tutor:quiz <module>
-Open a topic: /tutor:open <topic>
+Next: /tutor:open <the topic to continue with> — <its title>
 ```
 
 ## Definition of done

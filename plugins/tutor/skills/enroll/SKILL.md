@@ -25,8 +25,8 @@ Read these files that ship with the plugin:
 
 - `${CLAUDE_SKILL_DIR}/../../references/workbook.md` — the workbook format
   (required)
-- `${CLAUDE_SKILL_DIR}/../../references/teaching.md` — "Asking with choices"
-  and "Placement"
+- `${CLAUDE_SKILL_DIR}/../../references/teaching.md` — "Asking with choices",
+  "Placement" and "Ending a step"
 
 ## Hard rules
 
@@ -138,8 +138,8 @@ As workbook.md describes:
 
 ### 8. Report
 
-Report in the format below, and offer to open the first topic. If the learner
-agrees, continue with `/tutor:open`.
+Report in the format below, ending with the next command. If the learner just
+says yes, continue with `/tutor:open`.
 
 ## Output
 
@@ -156,7 +156,7 @@ First up: <topic>
 From now on, start Claude Code in the workbook folder. It has access to the
 curriculum there, and the curriculum is protected from edits.
 
-Open the first topic now?
+Next: /tutor:open — the first topic, <topic>
 ```
 
 ## Definition of done
