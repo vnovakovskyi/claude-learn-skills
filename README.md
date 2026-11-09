@@ -7,7 +7,7 @@ from any learning roadmap.**
 
 You bring the roadmap: a folder of Markdown notes, such as an Obsidian vault.
 The `tutor` plugin turns it into a course. It knows where you stopped and what
-comes next, explains topics or finds you something to read or watch, gives you
+comes next, explains topics and gives you something to read or watch, gives you
 practice and reviews your code, quizzes you, and brings old topics back before
 you forget them. Your progress lives in a workbook folder of your own; the
 roadmap itself is never touched.
@@ -39,9 +39,10 @@ roadmap itself is never touched.
 
 - **Knows where you are.** Every session starts where the last one stopped.
   `/tutor:open` shows the current topic, what's inside it, and the plan.
-- **Teaches your way.** Short explanations, or two to four hand-picked
-  resources — the roadmap's own first, then articles, videos and books from the
-  web, every link checked — or both.
+- **Leads the way.** You don't have to know what comes next. `/tutor:teach`
+  explains the current topic right away and gives you what to read or watch:
+  the roadmap's own sources first, then articles or videos from the web, every
+  link checked. Every step ends with the command for the next one.
 - **Checks understanding, not just reading.** A question after every concept,
   then a quiz: first with answer options, then open questions. A topic is done
   only when you pass the open round and meet the roadmap's definition of done.
@@ -177,12 +178,12 @@ Practice: findByName over a map, returning Optional
 Done when: idiomatic Optional, no null returns, knows when not to use Optional
 
 Plan:
-  1. Learn the concepts — I explain, or you read or watch first   /tutor:teach
+  1. Learn — a short explanation and what to read, then a check /tutor:teach
   2. Practice — findByName with Optional                        /tutor:practice
   3. Quiz — options first, then open questions                  /tutor:quiz
 
 Reviews due: Enums — /tutor:review
-Say "teach me" to start, or name a concept to begin with.
+Next: /tutor:teach — a short explanation of the topic and what to read
 ```
 
 `open` is the map before the lesson. It catches up with changes in the roadmap,
@@ -190,29 +191,40 @@ picks the topic you're on (or the one you name), and shows what's in it and how
 you'll go through it. It doesn't start the topic and changes nothing, so use it whenever you want to look around:
 `/tutor:open Streams`, `/tutor:open module 5`.
 
-### 2. Teach: learn it your way
+### 2. Teach: explain, read, check
 
-Say "teach me" or run `/tutor:teach`. The tutor names what you're about to learn
-and asks how you want to learn it:
-
-- **Explain it.** A few sentences and a small example per concept, then a
-  question to check it.
-- **Something to read or watch.** Two to four options, each with its type,
-  length and why it's worth it. You study, come back, and explain each concept
-  in your own words; the tutor fills the gaps.
-- **Both.** A short explanation first, then resources to go deeper.
+Say "teach me" or run `/tutor:teach`. There's nothing to choose: the tutor takes
+the topic you're on and, in one reply, explains each concept in a few sentences,
+then lists what to read or watch to understand it better, the one to start with
+first.
 
 ```text
-For "Optional and Null-Safety":
-1. Article · dev.java — Using Optionals · ~10 min · from the roadmap; the official guide
+Optional and Null-Safety
+
+1. null means absence; dereferencing it throws NPE
+   A variable that refers to no object holds null. Call a method on it and Java
+   throws a NullPointerException at run time, often far from where the null
+   came from.
+2. Creating an Optional: of / ofNullable / empty
+   Optional.of(x) when x is never null, Optional.ofNullable(x) when it may be,
+   Optional.empty() for "no value".
+   ...
+
+To understand it better, read or watch:
+1. Article · dev.java — Using Optionals · ~10 min · from the roadmap; start here
 2. Book · Effective Java (3rd ed.), Item 55 "Return optionals judiciously" · one item · when to use it and when not
 3. Video · a short walkthrough found on the web · ~12 min · link checked
-Which one?
+
+Next: read them, then /tutor:teach — I'll check each concept with a question.
 ```
 
-You can switch at any moment: "just explain it", "find me a video on this", "is
-there an article in Russian?". Start from a specific concept with
-`/tutor:teach orElseGet`.
+Only materials the tutor has opened and checked make the list: the roadmap's own
+sources first, then an article or a video from the web.
+
+When you're back, the tutor asks one question per concept, fills the gaps, and
+leads you on to `/tutor:practice`. Want something else? Say "explain it more
+simply", "find me a video on this", or "skip the reading, ask me". Start from a
+specific concept with `/tutor:teach orElseGet`.
 
 ### 3. Practice: do it yourself
 
@@ -277,7 +289,7 @@ before anything new.
 |---|---|---|---|
 | `/tutor:enroll` | `[roadmap folder or git URL] [workbook folder]` | Picks the roadmap and the workbook folder, gets to know you, offers a placement check, creates the workbook with your plan. | The new workbook |
 | `/tutor:open` | `[topic \| module]` | Catches up with the roadmap, then shows the current topic (or the one you name) and the plan, or a module with its topics. | Nothing but the sync |
-| `/tutor:teach` | `[topic \| concept]` | Says what to learn, explains or offers resources, checks each concept with a question. | Topic note, plan, journal |
+| `/tutor:teach` | `[topic \| concept]` | Explains the topic and gives what to read or watch, then checks each concept with a question. | Topic note, plan, journal |
 | `/tutor:practice` | `[topic] [check]` | Gives the task, hints when you're stuck, reviews your work. | Topic note, plan, journal |
 | `/tutor:quiz` | `[choice \| open] [topic \| module]` | A choice or open round on a topic, or a module checkpoint. The open round can finish a topic. | Quiz results, plan |
 | `/tutor:review` | `[topic \| module \| recent \| weak] [recap]` | Brings back finished topics: questions first, then a recap of what was missed; or a recap first, on request. | Review results, next review dates |

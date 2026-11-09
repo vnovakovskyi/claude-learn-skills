@@ -23,6 +23,7 @@ Read these files that ship with the plugin:
 
 - `${CLAUDE_SKILL_DIR}/../../references/workbook.md` (required)
 - `${CLAUDE_SKILL_DIR}/../../references/sync.md` (required)
+- `${CLAUDE_SKILL_DIR}/../../references/teaching.md` — "Ending a step"
 
 ## Hard rules
 
@@ -66,7 +67,7 @@ Reviews:    <due today — /tutor:review> · <next 7 days>
 Weak spots: <three to five>
 Activity:   <N> days of study in the last 7 days, last on <date>
 
-Next: /tutor:open
+Next: </tutor:review — <n> topics due | /tutor:open — continue <the current topic>>
 ```
 
 ## Definition of done

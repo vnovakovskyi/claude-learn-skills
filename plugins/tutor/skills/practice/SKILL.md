@@ -23,7 +23,7 @@ Read these files that ship with the plugin:
 
 - `${CLAUDE_SKILL_DIR}/../../references/workbook.md` (required)
 - `${CLAUDE_SKILL_DIR}/../../references/teaching.md` (required: "Practice:
-  hints, not answers" and "Checking practice")
+  hints, not answers", "Checking practice" and "Ending a step")
 
 ## Hard rules
 
@@ -44,16 +44,29 @@ Read these files that ship with the plugin:
    - **No task yet:** give it in your own words: the goal, the steps, the folder
      in `practice/` (continue an existing project folder when the curriculum
      builds one project across topics). Help with setup that isn't the point of
-     the task. Set `stage: practice` and record the task and the folder.
+     the task. Set `stage: practice` and record the task and the folder. End
+     with `/tutor:practice check` for when the work is done.
    - **The learner is stuck:** the hint ladder.
    - **The learner says it's ready, or `check`:** check it (teaching.md). Record
      the review and the verdict in the topic note.
-4. **Accepted:** set `stage: quiz`, update the plan's Result, and offer
-   `/tutor:quiz`. **Needs changes:** say what to do next; the learner comes back
-   with `/tutor:practice check`.
+4. **Accepted:** set `stage: quiz`, update the plan's Result, and end with
+   `/tutor:quiz`. **Needs changes:** say what to fix, and end with
+   `/tutor:practice check` for when it's fixed.
 5. Add a line to today's journal entry and update `Next:`.
 
 ## Output
+
+After giving the task:
+
+```text
+<Topic> — practice
+Task:   <the goal, in one or two sentences>
+Steps:  1. <step>  2. <step>  3. <step>
+Folder: practice/<folder>/
+
+Stuck? Say so, and you'll get a hint, not the answer.
+Next: when it's done, /tutor:practice check — I'll run it and review it.
+```
 
 After a review:
 
@@ -62,7 +75,7 @@ After a review:
 Works:    <what is good>
 To fix:   <the most important points, at most five>
 Take away: <one lesson>
-Next: <what to fix | /tutor:quiz>
+Next: <fix it, then /tutor:practice check | /tutor:quiz — the quiz on this topic>
 ```
 
 ## Definition of done
